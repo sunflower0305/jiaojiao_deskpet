@@ -1,0 +1,80 @@
+{
+  "schemaVersion": 1,
+  "name": "角角",
+  "author": "Valeria_Zhang",
+  "version": "1.0.0",
+  "description": "胖嘟嘟的蓝灰英短角角，爱吃爱睡爱哈气",
+
+  "viewBox": {
+    "x": 0,
+    "y": 0,
+    "width": 256,
+    "height": 320
+  },
+
+  "layout": {
+    "contentBox": { "x": 15, "y": 10, "width": 226, "height": 295 },
+    "centerX": 128,
+    "centerXRatio": 0.5,
+    "baselineY": 305,
+    "visibleHeightRatio": 0.8,
+    "baselineBottomRatio": 0.05
+  },
+
+  "eyeTracking": {
+    "enabled": false
+  },
+
+  "states": {
+    "idle":         ["idle.png"],
+    "thinking":     ["thinking.png"],
+    "working":      ["working.png"],
+    "error":        ["error.png"],
+    "attention":    ["happy.png"],
+    "notification": ["notification.png"],
+    "sleeping":     ["sleeping.png"],
+    "waking":       ["waking.png"]
+  },
+
+  "sleepSequence": {
+    "mode": "direct"
+  },
+
+  "workingTiers": [
+    { "minSessions": 1, "file": "working.png" }
+  ],
+
+  "timings": {
+    "mouseIdleTimeout": 20000,
+    "mouseSleepTimeout": 60000
+  },
+
+  "idleAnimations": [
+    { "file": "happy.png",  "duration": 3200 },
+    { "file": "waking.png", "duration": 3500 }
+  ],
+
+  "reactions": {
+    "clickLeft":  { "file": "happy.png",        "duration": 2000 },
+    "clickRight": { "file": "happy.png",        "duration": 2000 },
+    "annoyed":    { "file": "error.png",        "duration": 2500 },
+    "double":     { "file": "notification.png", "duration": 2500 }
+  },
+
+  "hitBoxes": {
+    "default":  { "x": 15, "y": 80,  "w": 226, "h": 235 },
+    "sleeping": { "x": 15, "y": 200, "w": 226, "h": 115 }
+  },
+  "sleepingHitboxFiles": ["sleeping.png"],
+
+  "miniMode": {
+    "supported": false
+  },
+
+  "objectScale": {
+    "widthRatio": 1.0,
+    "heightRatio": 1.0,
+    "offsetX": 0,
+    "offsetY": 0
+  }
+}
