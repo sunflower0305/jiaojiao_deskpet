@@ -33,7 +33,8 @@
     "attention":    ["happy.png"],
     "notification": ["notification.png"],
     "sleeping":     ["sleeping.png"],
-    "waking":       ["waking.png"]
+    "waking":       ["waking.png"],
+    "yawning":      ["sleeping.png"]
   },
 
   "sleepSequence": {
@@ -45,7 +46,7 @@
   ],
 
   "timings": {
-    "mouseIdleTimeout": 20000,
+    "mouseIdleTimeout": 30000,
     "mouseSleepTimeout": 60000
   },
 
@@ -58,6 +59,7 @@
     "clickLeft":  { "file": "happy.png",        "duration": 2000 },
     "clickRight": { "file": "happy.png",        "duration": 2000 },
     "annoyed":    { "file": "error.png",        "duration": 2500 },
+    "triple":     { "file": "waking.png",       "duration": 3500 },
     "double":     { "file": "notification.png", "duration": 2500 }
   },
 
