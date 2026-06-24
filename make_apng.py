@@ -261,6 +261,12 @@ def main():
             dst = os.path.join(THEME_ASSETS, f"{name}.png")
             shutil.copy2(src, dst)
             print(f"  {name}.png")
+        # 同步 theme.json
+        theme_src = os.path.join(_HERE, "theme.json")
+        theme_dst = os.path.join(os.path.dirname(THEME_ASSETS), "theme.json")
+        if os.path.exists(theme_src):
+            shutil.copy2(theme_src, theme_dst)
+            print(f"  theme.json")
         print("\nDone. Restart clawd-on-desk.")
     else:
         print(f"\nDone. (THEME_ASSETS 路径不存在，跳过复制)")
