@@ -124,6 +124,7 @@ python make_apng.py
 | waking | 唤醒 | 4 | pingpong |
 | yawning | 打哈欠 | 8 | pingpong |
 | eating | 吃饭（午饭时间触发） | 8 | 循环 |
+| dragging | 被拖拽时挣扎 | 8 | 循环 |
 
 ## 交互反应
 
@@ -134,6 +135,7 @@ python make_apng.py
 | 双击 | notification | 2.5s |
 | 三击 | waking（唤醒） | 3.5s |
 | annoyed 事件 | error | 2.5s |
+| 拖拽角角 | dragging（持续到松手） | - |
 
 ## 扩展脚本
 

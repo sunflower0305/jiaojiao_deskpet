@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "name": "角角",
   "author": "Valeria_Zhang",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "description": "胖嘟嘟的蓝灰英短角角，爱吃爱睡爱哈气",
 
   "viewBox": {
@@ -35,7 +35,8 @@
     "sleeping":     ["sleeping.png"],
     "waking":       ["waking.png"],
     "yawning":      ["yawning.png"],
-    "eating":       ["eating.png"]
+    "eating":       ["eating.png"],
+    "dragging":     ["dragging.png"]
   },
 
   "sleepSequence": {
@@ -62,7 +63,8 @@
     "clickRight": { "file": "happy.png",        "duration": 2000 },
     "annoyed":    { "file": "error.png",        "duration": 2500 },
     "triple":     { "file": "waking.png",       "duration": 3500 },
-    "double":     { "file": "notification.png", "duration": 2500 }
+    "double":     { "file": "notification.png", "duration": 2500 },
+    "drag":       { "file": "dragging.png" }
   },
 
   "hitBoxes": {

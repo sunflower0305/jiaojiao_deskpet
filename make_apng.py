@@ -101,6 +101,12 @@ STATES = {
         "n_frames": 8,
         "ms": 220, "pingpong": False,
     },
+    "dragging": {
+        "file": "dragging.png",
+        "cols": 8, "rows": 1,
+        "n_frames": 8,
+        "ms": 120, "pingpong": False,
+    },
 }
 
 
