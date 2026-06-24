@@ -121,4 +121,15 @@ python make_apng.py
 | happy | 开心/完成 | 8 | pingpong |
 | error | 报错 | 8 | pingpong |
 | notification | 通知 | 8 | 循环 |
-| waking | 唤醒 | 8 | 循环 |
+| waking | 唤醒 | 4 | pingpong |
+| yawning | 哈气（暂用 sleeping 素材） | - | - |
+
+## 交互反应
+
+| 触发 | 效果 | 持续 |
+|------|------|------|
+| 单击左键 | happy | 2s |
+| 单击右键 | happy | 2s |
+| 双击 | notification | 2.5s |
+| 三击 | waking（唤醒） | 3.5s |
+| annoyed 事件 | error | 2.5s |

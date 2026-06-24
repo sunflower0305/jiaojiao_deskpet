@@ -85,9 +85,9 @@ STATES = {
     },
     "waking": {
         "file": "waking.png",
-        "cols": 8, "rows": 1,
-        "n_frames": 8,
-        "ms": 280, "pingpong": False,
+        "cols": 4, "rows": 1,
+        "n_frames": 4,
+        "ms": 280, "pingpong": True,
     },
 }
 

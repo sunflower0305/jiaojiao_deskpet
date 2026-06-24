@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "name": "角角",
   "author": "Valeria_Zhang",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "胖嘟嘟的蓝灰英短角角，爱吃爱睡爱哈气",
 
   "viewBox": {
@@ -51,8 +51,9 @@
   },
 
   "idleAnimations": [
-    { "file": "happy.png",  "duration": 3200 },
-    { "file": "waking.png", "duration": 3500 }
+    { "file": "happy.png",    "duration": 3200 },
+    { "file": "waking.png",   "duration": 3500 },
+    { "file": "sleeping.png", "duration": 2800 }
   ],
 
   "reactions": {
