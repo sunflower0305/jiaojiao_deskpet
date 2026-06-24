@@ -122,7 +122,8 @@ python make_apng.py
 | error | 报错 | 8 | pingpong |
 | notification | 通知 | 8 | 循环 |
 | waking | 唤醒 | 4 | pingpong |
-| yawning | 哈气（暂用 sleeping 素材） | - | - |
+| yawning | 打哈欠 | 8 | pingpong |
+| eating | 吃饭（午饭时间触发） | 8 | 循环 |
 
 ## 交互反应
 
@@ -133,3 +134,25 @@ python make_apng.py
 | 双击 | notification | 2.5s |
 | 三击 | waking（唤醒） | 3.5s |
 | annoyed 事件 | error | 2.5s |
+
+## 扩展脚本
+
+### 午饭触发器（`lunch_trigger.py`）
+
+在 11:45–13:00 自动让角角进入吃饭状态，60 秒后恢复。
+
+注册 Windows 任务计划（以管理员身份运行）：
+
+```powershell
+powershell -ExecutionPolicy Bypass -File setup_tasks.ps1
+```
+
+也可以直接运行测试：
+
+```bash
+python lunch_trigger.py
+```
+
+### 报错情绪积累（`error_persistence.py`）
+
+连续报错 3 次后，角角维持 error 状态 15 秒再恢复。通过 `~/.claude/settings.json` 的 `PostToolUseFailure` hook 自动触发，无需手动配置。

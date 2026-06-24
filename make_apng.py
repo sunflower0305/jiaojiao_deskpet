@@ -89,6 +89,18 @@ STATES = {
         "n_frames": 4,
         "ms": 280, "pingpong": True,
     },
+    "yawning": {
+        "file": "yawning.png",
+        "cols": 8, "rows": 1,
+        "n_frames": 8,
+        "ms": 300, "pingpong": True,
+    },
+    "eating": {
+        "file": "eating.png",
+        "cols": 8, "rows": 1,
+        "n_frames": 8,
+        "ms": 220, "pingpong": False,
+    },
 }
 
 
