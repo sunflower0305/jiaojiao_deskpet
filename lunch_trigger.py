@@ -7,6 +7,7 @@
 """
 
 import json
+import random
 import time
 import urllib.request
 import urllib.error
@@ -18,6 +19,16 @@ DEFAULT_PORT = 23333
 EATING_DURATION_SEC = 60   # eating 状态持续时间（秒），之后恢复 idle
 WINDOW_START = (11, 45)    # 触发窗口开始
 WINDOW_END   = (13,  0)    # 触发窗口结束
+
+EATING_PHRASES = [
+    "好好吃！",
+    "嗷呜~",
+    "吃饭时间！",
+    "咔嚓咔嚓~",
+    "好香呀~",
+    "今天也要好好吃饭！",
+    "最喜欢吃饭了！",
+]
 
 
 def get_port():
@@ -32,6 +43,21 @@ def post_state(port, state, session_id="default"):
     payload = json.dumps({"state": state, "session_id": session_id}).encode()
     req = urllib.request.Request(
         f"http://127.0.0.1:{port}/state",
+        data=payload,
+        headers={"Content-Type": "application/json"},
+        method="POST",
+    )
+    try:
+        with urllib.request.urlopen(req, timeout=3) as resp:
+            return resp.status == 200
+    except urllib.error.URLError:
+        return False
+
+
+def post_speech(port, text, duration_ms=4000):
+    payload = json.dumps({"text": text, "durationMs": duration_ms}).encode()
+    req = urllib.request.Request(
+        f"http://127.0.0.1:{port}/speech",
         data=payload,
         headers={"Content-Type": "application/json"},
         method="POST",
@@ -59,7 +85,9 @@ def main():
     print(f"[lunch_trigger] 推送 eating 状态到端口 {port}")
     ok = post_state(port, "eating")
     if ok:
-        print(f"[lunch_trigger] eating 状态已触发，持续 {EATING_DURATION_SEC} 秒后恢复。")
+        phrase = random.choice(EATING_PHRASES)
+        post_speech(port, phrase, duration_ms=5000)
+        print(f"[lunch_trigger] eating 状态已触发（{phrase!r}），持续 {EATING_DURATION_SEC} 秒后恢复。")
         time.sleep(EATING_DURATION_SEC)
         post_state(port, "idle")
         print("[lunch_trigger] 已恢复 idle。")
