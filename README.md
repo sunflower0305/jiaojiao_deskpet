@@ -1,6 +1,6 @@
 # 角角桌宠素材包
 
-[clawd-on-desk](https://github.com/KakaJi/clawd-on-desk) jiaojiao 主题的动图素材，包含 8 种状态的 APNG 动图和静态 GIF。
+[clawd-on-desk](https://github.com/KakaJi/clawd-on-desk) jiaojiao 主题的动图素材，包含 11 种状态的 APNG 动图和静态 GIF。
 
 ## 目录结构
 
@@ -13,6 +13,7 @@
   theme.json        # clawd-on-desk 主题配置
   make_apng.py      # 精灵图 → APNG 脚本
   make_gif.py       # 静态图 → GIF 脚本
+  make_petdex.py    # APNG → Petdex/Codex spritesheet 脚本
   requirements.txt
 ```
 
@@ -57,6 +58,33 @@ python make_gif.py
 ```
 
 输入 `sprites/` 下的静态 PNG，输出到 `gifs/`。
+
+### 4. 生成 Petdex / Codex 宠物包
+
+```bash
+python make_petdex.py
+```
+
+脚本会把 `apng/` 下的动画转换成 Petdex / Codex 固定格式：
+
+- `jiaojiao-petdex/pet.json`
+- `jiaojiao-petdex/spritesheet.webp`
+- `jiaojiao-petdex.zip`
+
+其中 `spritesheet.webp` 是 8 列 × 9 行的透明图集，尺寸为 1536×1872，每格 192×208。`petdex/` 目录是中间构建和 QA 输出，可以随时删除后重新生成。
+
+如果要在 Codex 本地使用，把 `jiaojiao-petdex` 复制到：
+
+```bash
+~/.codex/pets/jiaojiao/
+```
+
+如果要上传到 Petdex，可以在 https://petdex.dev/create 拖拽 `jiaojiao-petdex.zip`，也可以用 CLI：
+
+```bash
+npx petdex login
+npx petdex submit ./jiaojiao-petdex
+```
 
 ---
 
